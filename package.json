@@ -4,7 +4,7 @@
   "description": "some javascript function",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha -r esm test/*.test.js",
     "build": "babel src -d lib"
   },
   "keywords": [
@@ -15,6 +15,8 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.13.16",
-    "@babel/core": "^7.13.16"
+    "@babel/core": "^7.13.16",
+    "esm": "^3.2.25",
+    "mocha": "^8.3.2"
   }
 }
