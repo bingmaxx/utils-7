@@ -1,45 +1,44 @@
 /**
- * 数据格式化: 保留 num 的 n 位小数
+ * 手机号格式化: 国家码为 '86'时，省略国家码。
+ * @param {String} mobile 手机号
+ * @param {String} code 国家码
+ * @return {*} res
  */
-export const numFix = (num, n = 2) => (typeof num === 'number' ? Math.round(num * (10 ** n)) / (10 ** n) : 0);
-
-/**
- * 手机号格式化: 非 '86' 则显示国家码
- */
-export const mobileFilter = (value = '--', code) => (code === '86' || !code ? value : `+${code} ${value}`);
-
-/**
- * 默认显示 - 格式化
- */
-export const defFilter = (value, text) => (!value ? text : value);
+export const mobileFormat = (mobile, code) => ((code === '86' || !code) ? mobile : `+${code} ${mobile}`);
 
 /**
  * 文件大小格式化
+ * eg: 1025 => '1.00 KB'
+ * TOFIX: '>>' 位运算会把二进制数限制在32位，超出部分被舍弃。本方法只精确到 'GB'
  * @param {Number} data 文件大小，单位 B
  * @return {String} size
  */
-export const sizeFilter = (data) => {
+export const fileSizeFormat = (data) => {
+  if (typeof data !== 'number') return 0;
+  if (data >= 1024 ** 3) return `${(data / (1024 ** 3)).toFixed(2)} GB`;
+
   let size = null;
   if ((data >> 10) <= 0) {
-    size = `${data} B`;
+    size = `${data.toFixed()} B`;
   } else if ((data >> 20) <= 0) {
-    size = `${numFix(data / 1024)} KB`;
-  } else if ((data >> 30) <= 0) {
-    size = `${numFix(data / (1024 * 1024))} MB`;
+    size = `${(data >> 10).toFixed(2)} KB`;
+  } else {
+    size = `${(data >> 20).toFixed(2)} MB`;
   }
   return size;
 }
 
 /**
  * 货币格式化 https://www.zhangxinxu.com/wordpress/2019/09/js-intl-zh/
- * @param {Nmuber} value 数字
+ * eg: 1111.1 => '1,111.1'
+ * @param {Nmuber} data 数字
  * @param {*} zero 为空时如何显示
  * @param {Number} fixed 精度
  */
-export const currencyFilter = (value, zero = 0, fixed = 2) => {
-  if (!value) return zero;
+export const currencyFormat = (data, zero = 0, fixed = 2) => {
+  if (!data) return zero;
 
-  const num = Number(value).toFixed(fixed);
+  const num = Number(data).toFixed(fixed);
   return new Intl.NumberFormat(undefined, {
     minimumFractionDigits: fixed
   }).format(num);
