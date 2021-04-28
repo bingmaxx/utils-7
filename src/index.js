@@ -9,11 +9,11 @@ export * from './storage';
  * @param {String} key 参数名称
  * @return {String|Number} value 参数值
  */
-export const getQueryByKey = key => {
-  const reg = new RegExp(`(^|&)${key}=([^&]*)(&|$)`, 'i');
-  const res = window.location.search.substr(1).match(reg);
-  return res !== null ? unescape(res[2]) : null;
-};
+// export const getQueryByKey = key => {
+//   const reg = new RegExp(`(^|&)${key}=([^&]*)(&|$)`, 'i');
+//   const res = window.location.search.substr(1).match(reg);
+//   return res !== null ? unescape(res[2]) : null;
+// };
 
 /**
  * 将对象转为查询字符串
