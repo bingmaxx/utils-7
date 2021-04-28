@@ -9,16 +9,16 @@ export const dateMs = date => (date ? parseInt(new Date(date).getTime()) : parse
 export const msDate = s => (s ? new Date(s + 28800000).toISOString().replace(/[ZT]/g, ' ').substring(0, 19) : '--');
 
 /**
- * 返回给定日期是本年的第几周
- * @param {Number} YY 年
- * @param {Number} MM 月
- * @param {Number} DD 日
+ * 判断给定日期是本年的第几周
+ * @param {Date || String} date 给定日期
  * @return {Number} weeks
  */
-export const getYearWeek = (YY, MM, DD) => {
-  const now = new Date(YY, parseInt(MM) - 1, DD);
-  const start = new Date(YY, 0, 1);
-  const days = Math.round((now.valueOf() - start.valueOf()) / 86400000);
+export const getWeeks = (date) => {
+  const day_ms = 24 * 3600 * 1000;
+  const now = typeof date === 'string' ? new Date(date) : date;
+  const now_0_ms = now.getTime() - (now.getTime() % day_ms);
 
-  return Math.ceil((days + ((start.getDay() + 1) - 1)) / 7);
+  const new_year = new Date(now.getFullYear(), 0, 1);
+  const days = Math.round((now_0_ms - new_year.getTime()) / 86400000);
+  return Math.ceil((days + ((new_year.getDay() + 1) - 1)) / 7);
 }

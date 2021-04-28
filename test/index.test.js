@@ -1,5 +1,5 @@
 import assert from 'assert';
-import { obj2Query, copyByKey } from '../src/index.js';
+import { obj2Query, copyByKey } from '../src/index';
 
 describe('obj2Query', function () {
   it('normal', function () {

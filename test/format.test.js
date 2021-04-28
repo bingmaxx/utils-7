@@ -1,5 +1,5 @@
 import assert from 'assert';
-import { mobileFormat, fileSizeFormat, currencyFormat } from '../src/format.js';
+import { mobileFormat, fileSizeFormat, currencyFormat } from '../src/format';
 
 describe('mobileFormat', function () {
   it('normal', function () {
