@@ -11,6 +11,7 @@ const toDate = function (date) {
 
 /**
  * 日期时间转时间戳
+ * ATTENTION: new Date('2021-0101') !== new Date('2021-01-01 00:00:00')
  * @param {*} value 日期时间
  * @param {String} type 时间戳格式 'm', 'ms'
  * @return {Number} res 时间戳
@@ -39,9 +40,9 @@ export const date2Timestamp = (value, type) => {
 export const timestampFormat = (value, format, type) => {
   format = format || 'yyyy-MM-dd HH:mm:ss';
   type = type || 'm';
-  if (typeof value !== 'number') return;
-  const timestamp = type === 'm' ? value * 1000 : value;
   const def = '--';
+  if (typeof value !== 'number') return def;
+  const timestamp = type === 'm' ? value * 1000 : value;
   if (!isDate(timestamp)) return def;
 
   const func = {

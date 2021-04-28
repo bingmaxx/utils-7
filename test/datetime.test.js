@@ -3,8 +3,8 @@ import { date2Timestamp, timestampFormat, getWeeks } from '../src/datetime';
 
 describe('date2Timestamp', function () {
   it('normal', function () {
-    assert.strictEqual(date2Timestamp('2021-01-01'), 1609430400);
-    assert.strictEqual(date2Timestamp('2021-01-01', 'ms'), 1609430400000);
+    assert.strictEqual(date2Timestamp('2021-01-01 00:00:00'), 1609430400);
+    assert.strictEqual(date2Timestamp('2021-01-01 00:00:00', 'ms'), 1609430400000);
   });
   it('abnormal', function () {
     assert.strictEqual(date2Timestamp(null), null);
