@@ -7,9 +7,8 @@
 export const mobileFormat = (mobile, code) => ((code === '86' || !code) ? mobile : `+${code} ${mobile}`);
 
 /**
- * 文件大小格式化
+ * 文件大小格式化，'>>' 位运算会把二进制数限制在32位，超出部分被舍弃。本方法只精确到 'GB'
  * eg: 1025 => '1.00 KB'
- * TOFIX: '>>' 位运算会把二进制数限制在32位，超出部分被舍弃。本方法只精确到 'GB'
  * @param {Number} data 文件大小，单位 B
  * @return {String} size
  */
