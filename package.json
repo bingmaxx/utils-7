@@ -1,18 +1,26 @@
 {
   "name": "utils-7",
   "version": "1.0.0",
+  "license": "MIT",
   "description": "some javascript function",
+  "author": "bingmax",
   "main": "lib/index.js",
-  "scripts": {
-    "test": "mocha -r esm test/*.test.js",
-    "build": "babel src -d lib"
-  },
+  "homepage": "https://github.com/bingmaxx/utils-7#readme",
   "keywords": [
     "js",
     "utils"
   ],
-  "author": "bingmax",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bingmaxx/utils-7"
+  },
+  "bugs": {
+    "url": "https://github.com/bingmaxx/utils-7/issues"
+  },
+  "scripts": {
+    "test": "mocha -r esm test/*.test.js",
+    "build": "babel src -d lib"
+  },
   "devDependencies": {
     "@babel/cli": "^7.13.16",
     "@babel/core": "^7.13.16",

@@ -2,7 +2,7 @@
 
 some javascript function.
 
-**action**: `utils-7` uses `ES6` syntax, you need to `polyfill` it yourself if you use it in the project.
+**Attention**: `utils-7` uses `ES6` syntax, you need to `polyfill` it yourself if you use it in the project.
 
 
 ### Installation
