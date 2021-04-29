@@ -14,15 +14,15 @@ export const mobileFormat = (mobile, code) => ((code === '86' || !code) ? mobile
  */
 export const fileSizeFormat = (data) => {
   if (typeof data !== 'number') return 0;
-  if (data >= 1024 ** 3) return `${(data / (1024 ** 3)).toFixed(2)} GB`;
+  if (data >= 2 ** 30) return `${(data / (2 ** 30)).toFixed(2)} GB`;
 
   let size = null;
   if ((data >> 10) <= 0) {
     size = `${data.toFixed()} B`;
   } else if ((data >> 20) <= 0) {
-    size = `${(data >> 10).toFixed(2)} KB`;
+    size = `${(data / (2 ** 10)).toFixed(2)} KB`;
   } else {
-    size = `${(data >> 20).toFixed(2)} MB`;
+    size = `${(data / (2 ** 20)).toFixed(2)} MB`;
   }
   return size;
 }

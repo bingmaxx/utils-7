@@ -15,6 +15,7 @@ describe('fileSizeFormat', function () {
     assert.strictEqual(fileSizeFormat(1023), '1023 B');
     assert.strictEqual(fileSizeFormat(1024), '1.00 KB');
     assert.strictEqual(fileSizeFormat(1025), '1.00 KB');
+    assert.strictEqual(fileSizeFormat(7066896), '6.74 MB');
     assert.strictEqual(fileSizeFormat(1024*1024), '1.00 MB');
     assert.strictEqual(fileSizeFormat(1024*1024*1024), '1.00 GB');
     assert.strictEqual(fileSizeFormat(1024*1024*1024*365), '365.00 GB');
