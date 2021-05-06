@@ -13,16 +13,16 @@ const toDate = function (date) {
  * 日期时间转时间戳
  * ATTENTION: new Date('2021-0101') !== new Date('2021-01-01 00:00:00')
  * @param {*} value 日期时间
- * @param {String} type 时间戳格式 'm', 'ms'
+ * @param {String} type 时间戳格式 's', 'ms'
  * @return {Number} res 时间戳
  */
 export const date2Timestamp = (value, type) => {
-  type = type || 'm';
+  type = type || 's';
   const date = toDate(value);
   if (!date) return null;
 
   const func = {
-    'm': () => (Math.round(date.getTime() / 1000)),
+    's': () => (Math.round(date.getTime() / 1000)),
     'ms': () => (date.getTime()),
   }
   if (typeof func[type] !== 'function') return null;
@@ -34,15 +34,15 @@ export const date2Timestamp = (value, type) => {
  * 推荐的日期格式化库 https://github.com/taylorhakes/fecha
  * @param {Number} value 时间戳
  * @param {String} format 日期时间格式
- * @param {String} type 时间戳格式 'm', 'ms'
+ * @param {String} type 时间戳格式 's', 'ms'
  * @return {Number} res 格式化后的日期时间
  */
 export const timestampFormat = (value, format, type) => {
   format = format || 'yyyy-MM-dd HH:mm:ss';
-  type = type || 'm';
+  type = type || 's';
   const def = '--';
   if (typeof value !== 'number') return def;
-  const timestamp = type === 'm' ? value * 1000 : value;
+  const timestamp = type === 's' ? value * 1000 : value;
   if (!isDate(timestamp)) return def;
 
   const func = {
