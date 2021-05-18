@@ -8,7 +8,7 @@ some javascript function.
 ### Installation
 Using npm:
 ```sh
-npm i utils-7 -S -D
+npm i utils-7 -D
 ```
 
 ### Usage
