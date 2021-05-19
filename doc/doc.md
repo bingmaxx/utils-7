@@ -11,3 +11,18 @@
 - opti：优化 optimization
 - non-compatibility：非兼容性修改
 - breaking：破坏性更新
+
+
+### 工具
+- [x] 测试框架 `Mocha`
+- [x] 断言库 `node assert`
+- [ ] 编译 `Babel`
+- [ ] 代码校验 `Eslint`
+- [ ] 持续集成 `Travis-CI`
+- [ ] 测试覆盖率 `Coveralls`
+
+
+### 文档
+[Mocha - en](https://mochajs.org/)
+[测试框架 Mocha 实例教程 | 阮一峰](http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html)
+[node assert 断言模块](http://nodejs.cn/api/assert.html)
