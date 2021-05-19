@@ -1,7 +1,15 @@
 ## Changelog
 
-### 1.0.1
+### 1.1.0
+2021-0506
 
+#### Non-compatibility
+- date2Timestamp() param type default 's'
+- timestampFormat() param type default 's'
+
+---
+
+### 1.0.1
 2021-0429
 
 #### Feat
