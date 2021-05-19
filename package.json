@@ -5,6 +5,10 @@
   "description": "some javascript function",
   "author": "bingmax",
   "main": "lib/index.js",
+  "files": [
+    "/lib",
+    "/src"
+  ],
   "homepage": "https://github.com/bingmaxx/utils-7#readme",
   "keywords": [
     "js",
