@@ -4,16 +4,18 @@ export * from './format';
 export * from './storage';
 
 /**
- * 获取 url 中的参数(hash 路由无效)
- * TOFIX: unescape() 方法已废弃
+ * 获取 url 中的参数
  * @param {String} key 参数名称
- * @return {String|Number} value 参数值
+ * @return {String} value 参数值
  */
-// export const getQueryByKey = key => {
-//   const reg = new RegExp(`(^|&)${key}=([^&]*)(&|$)`, 'i');
-//   const res = window.location.search.substr(1).match(reg);
-//   return res !== null ? unescape(res[2]) : null;
-// };
+export const getQueryByKey = key => {
+  const search = window.location.search.substring(1) || window.location.hash.split('?')[1];
+  if (!search) return null;
+
+  const reg = new RegExp(`(^|&)${key}=([^&]*)(&|$)`, 'i');
+  const res = search.match(reg);
+  return res !== null ? decodeURIComponent(res[2]) : null;
+};
 
 /**
  * 将对象转为查询字符串

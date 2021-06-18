@@ -18,6 +18,7 @@ import * as u7 from 'utils-7';
 
 // import you need
 import {
+  getQueryByKey,
   obj2Query,
   deepCopy,
   copyByKey,
