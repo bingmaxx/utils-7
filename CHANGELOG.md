@@ -1,5 +1,23 @@
 ## Changelog
 
+### 1.1.3
+2021-0819
+
+#### Fix
+- publish folder `./lib` to npm.
+
+---
+
+### 1.1.2
+2021-0819
+
+#### Feat
+- snakecase()
+- camelcase()
+- kebabcase()
+
+---
+
 ### 1.1.1
 2021-0618
 

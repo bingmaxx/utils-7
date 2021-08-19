@@ -42,5 +42,8 @@ import {
 } from 'utils-7';
 ```
 
+### ChangeLog
+[see here](./CHANGELOG.md)
+
 ### Doc
 see folder [doc](./doc/doc.md).
