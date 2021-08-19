@@ -36,6 +36,9 @@ import {
   getWeeks,
   download,
   downloadBlob,
+  snakecase,
+  camelcase,
+  kebabcase,
 } from 'utils-7';
 ```
 

@@ -1,5 +1,8 @@
 # Doc
 
+[变量命名规范](./变量命名规范.md)
+
+
 ### `Commit` 约定
 - feat：新功能 feature
 - fix：修补 bug
@@ -23,6 +26,6 @@
 
 
 ### 文档
-[Mocha - en](https://mochajs.org/)
-[测试框架 Mocha 实例教程 | 阮一峰](http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html)
-[node assert 断言模块](http://nodejs.cn/api/assert.html)
+[Mocha - en](https://mochajs.org/)  
+[测试框架 Mocha 实例教程 | 阮一峰](http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html)  
+[node assert 断言模块](http://nodejs.cn/api/assert.html)  
