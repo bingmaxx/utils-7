@@ -1,3 +1,4 @@
+export * from './case';
 export * from './datetime';
 export * from './file';
 export * from './format';
