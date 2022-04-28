@@ -31,8 +31,6 @@ import {
   mobileFormat,
   fileSizeFormat,
   currencyFormat,
-  date2Timestamp,
-  timestampFormat,
   getWeeks,
   download,
   downloadBlob,
