@@ -10,7 +10,7 @@ if [[ ($# > 0) && $1 ]]; then
   git push origin --tag
 
   npm run build
-  npm publish --tag $1
+  npm publish
   echo "[SUCCESS]"
 else
   echo "please provide argument [version]"
